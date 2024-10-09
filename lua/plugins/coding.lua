@@ -1,18 +1,19 @@
 return {
   {
     "folke/noice.nvim",
-    opts = function(_, opts)
-      -- disable annoying method signature popup
-      opts.lsp.signature = {
-        auto_open = { enabled = false },
+    opts = {
+      lsp = {
+        signature = {
+          auto_open = { enabled = false },
+        }
       }
-    end,
+    }
   },
   {
     'neovim/nvim-lspconfig',
-    opts = function(_, opts)
-      opts.inlay_hints = { enabled = false }
-    end
+    opts = {
+      inlay_hints = { enabled = false }
+    }
   },
   {
     "hrsh7th/nvim-cmp",
@@ -31,16 +32,12 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = {
+    opts = {
+      ensure_installed = {
         "pyright", "json-lsp", "prettierd", "typescript-language-server", "stylua", "lua-language-server"
       }
-    end
+    }
   },
-	{
-		'akinsho/toggleterm.nvim',
-    config = true
-	},
   {
     "nvim-treesitter/nvim-treesitter",
     init = function(plugin)
