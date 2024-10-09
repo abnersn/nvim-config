@@ -9,6 +9,12 @@ return {
     end,
   },
   {
+    'neovim/nvim-lspconfig',
+    opts = function(_, opts)
+      opts.inlay_hints = { enabled = false }
+    end
+  },
+  {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
