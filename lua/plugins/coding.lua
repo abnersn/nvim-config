@@ -11,18 +11,13 @@ return {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
-      opts.view = {
-        docs = {
-          auto_open = false
-        }
-      }
       opts.experimental = {
         ghost_text = false,
         native_menu = false,
       }
       cmp.setup.filetype({ 'markdown', 'help' }, {
         window = {
-          documentation = cmp.config.disable
+          documentation = cmp.config.window.bordered()
         }
       })
     end
