@@ -2,6 +2,7 @@ return {
   {
     "folke/noice.nvim",
     opts = function(_, opts)
+      -- disable annoying method signature popup
       opts.lsp.signature = {
         auto_open = { enabled = false },
       }
@@ -23,7 +24,7 @@ return {
     end
   },
   {
-    "williamboman/mason-lspconfig",
+    "williamboman/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = {
         "pyright", "json-lsp", "prettierd", "typescript-language-server", "stylua", "lua-language-server"
